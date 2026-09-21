@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetLife — AI-экосистема для владельцев питомцев</title>
+  <meta name="description" content="AI-экосистема, которая объединяет погоду, здоровье и заботу о вашем питомце в одном месте.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">🐾 PetLife</a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#features">Возможности</a>
+        <a href="#how">Как это работает</a>
+        <a href="#mission">Миссия</a>
+        <a href="#try">Попробовать</a>
+      </nav>
+      <a href="#try" class="btn btn--primary btn--sm">Попробовать бесплатно</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">Единый помощник для собак и кошек</p>
+          <h1>Заботься о питомце с умом</h1>
+          <p class="hero__subtitle">
+            AI-экосистема, которая объединяет погоду, здоровье и заботу о вашем питомце в одном месте
+          </p>
+          <div class="hero__actions">
+            <a href="#try" class="btn btn--primary">Попробовать бесплатно</a>
+            <a href="#features" class="btn btn--ghost">Узнать больше</a>
+          </div>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <svg viewBox="0 0 320 280" role="img" aria-label="Собака и кошка">
+            <defs>
+              <linearGradient id="blob" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#E8F1F8"/>
+                <stop offset="100%" stop-color="#DCEFE0"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="160" cy="150" rx="140" ry="110" fill="url(#blob)"/>
+            <text x="70" y="165" font-size="92">🐕</text>
+            <text x="160" y="175" font-size="92">🐈</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section reveal">
+      <div class="container">
+        <h2 class="section__title">Что умеет PetLife</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card__icon">🌤</div>
+            <h3>Прогулка и погода</h3>
+            <p>Безопасное время для прогулки с учётом температуры асфальта, качества воздуха и породы питомца</p>
+            <a href="#try" class="btn btn--link">Попробовать</a>
+          </article>
+          <article class="card">
+            <div class="card__icon">🩺</div>
+            <h3>Здоровье и симптомы</h3>
+            <p>Загрузите фото — ИИ проанализирует и подскажет, что делать: наблюдать или идти к ветеринару</p>
+            <a href="#try" class="btn btn--link">Попробовать</a>
+          </article>
+          <article class="card">
+            <div class="card__icon">❤️</div>
+            <h3>Социальная миссия</h3>
+            <p>Часть дохода идёт в приюты для животных. Помогайте, просто пользуясь PetLife</p>
+            <a href="#mission" class="btn btn--link">Узнать больше</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section section--alt reveal">
+      <div class="container">
+        <h2 class="section__title">Как это работает</h2>
+        <div class="steps">
+          <article class="step">
+            <div class="step__num">1️⃣</div>
+            <h3>Добавьте питомца</h3>
+            <p>Укажите породу, возраст, город</p>
+          </article>
+          <div class="steps__arrow" aria-hidden="true">→</div>
+          <article class="step">
+            <div class="step__num">2️⃣</div>
+            <h3>Получите рекомендации</h3>
+            <p>Погода, прогулки, здоровье — всё персонализировано</p>
+          </article>
+          <div class="steps__arrow" aria-hidden="true">→</div>
+          <article class="step">
+            <div class="step__num">3️⃣</div>
+            <h3>Следите за здоровьем</h3>
+            <p>Загружайте фото, ведите дневник, получайте советы</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="try" class="section reveal">
+      <div class="container">
+        <h2 class="section__title">Попробуйте прямо сейчас</h2>
+        <div class="demo">
+          <article class="panel">
+            <h3>Проверьте прогулку</h3>
+            <form id="weather-form" class="stack" novalidate>
+              <label>
+                Ваш город
+                <input id="city-input" type="text" name="city" placeholder="Например, Москва" autocomplete="address-level2">
+              </label>
+              <label>
+                Порода питомца
+                <select id="breed-select" name="breed">
+                  <option value="small">Собака (мелкая)</option>
+                  <option value="medium">Собака (средняя)</option>
+                  <option value="large">Собака (крупная)</option>
+                  <option value="cat">Кошка</option>
+                </select>
+              </label>
+              <button type="submit" class="btn btn--primary btn--block">Проверить погоду</button>
+            </form>
+            <p id="weather-error" class="message message--error" hidden></p>
+            <div id="weather-loading" class="loading" hidden>
+              <span class="spinner" aria-hidden="true"></span>
+              <span>Загружаем погоду...</span>
+            </div>
+            <div id="weather-result" class="result" hidden></div>
+          </article>
+
+          <article class="panel">
+            <h3>Проверьте здоровье</h3>
+            <p class="panel__lead">Загрузите фото питомца</p>
+            <p class="muted">ИИ посмотрит на фото и подскажет, есть ли повод для беспокойства</p>
+            <div class="upload">
+              <button id="photo-pick-btn" type="button" class="btn btn--ghost btn--block">Выбрать фото</button>
+              <input id="photo-input" type="file" accept="image/*" hidden>
+            </div>
+            <p id="photo-error" class="message message--error" hidden></p>
+            <img id="photo-preview" class="preview" alt="Превью загруженного фото" hidden>
+            <button id="analyze-btn" type="button" class="btn btn--primary btn--block" disabled>Анализировать</button>
+            <div id="ai-loading" class="loading" hidden>
+              <span class="spinner" aria-hidden="true"></span>
+              <span>Анализируем фото...</span>
+            </div>
+            <div id="ai-result" class="result" hidden></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission" class="section section--mission reveal">
+      <div class="container">
+        <h2 class="section__title">Мы не просто приложение</h2>
+        <p class="section__text">
+          PetLife — это социальная миссия. Часть дохода идёт в приюты для животных.
+          Каждый Premium-пользователь помогает найти дом для брошенных питомцев.
+        </p>
+        <div class="counter" aria-live="polite">
+          <span class="counter__emoji">🐾</span>
+          <span id="mission-count" class="counter__number">0</span>
+          <span class="counter__label">питомцев получили помощь</span>
+        </div>
+        <div class="mission-grid">
+          <article class="mission-item">
+            <div class="card__icon">🏠</div>
+            <h3>Поддержка приютов</h3>
+            <p>5% от каждого Premium-платежа</p>
+          </article>
+          <article class="mission-item">
+            <div class="card__icon">🐕</div>
+            <h3>Виртуальное усыновление</h3>
+            <p>Помогайте питомцу из приюта</p>
+          </article>
+          <article class="mission-item">
+            <div class="card__icon">📢</div>
+            <h3>Просвещение</h3>
+            <p>Учим ответственному владению</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="form" class="section reveal">
+      <div class="container container--narrow">
+        <h2 class="section__title">Получите ранний доступ</h2>
+        <p class="section__text">Оставьте email — сообщим о запуске и дадим бесплатный Premium на месяц</p>
+        <form id="access-form" class="panel stack" novalidate>
+          <label>
+            Имя
+            <input id="name-input" type="text" name="name" required autocomplete="name">
+            <span id="name-error" class="field-error" hidden></span>
+          </label>
+          <label>
+            Email
+            <input id="email-input" type="email" name="email" required autocomplete="email">
+            <span id="email-error" class="field-error" hidden></span>
+          </label>
+          <label>
+            Порода питомца
+            <input id="pet-breed-input" type="text" name="petBreed" placeholder="Необязательно">
+          </label>
+          <button type="submit" class="btn btn--primary btn--block">Получить доступ</button>
+        </form>
+        <div id="form-success" class="panel success" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="logo">🐾 PetLife</div>
+        <p>© 2026 PetLife. Все права защищены.</p>
+      </div>
+      <div class="footer__links">
+        <button type="button" class="link-btn" data-modal="privacy">Политика конфиденциальности</button>
+        <button type="button" class="link-btn" data-modal="contacts">Контакты</button>
+      </div>
+      <div class="social" aria-label="Социальные сети">
+        <a href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">✈️</a>
+        <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" aria-label="VK">🌐</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📸</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="modal-privacy" class="modal">
+    <h3>Политика конфиденциальности</h3>
+    <p>PetLife собирает только имя и email, которые вы оставляете в форме раннего доступа. Данные используются, чтобы сообщить о запуске продукта. Ключи API хранятся локально в вашем файле конфигурации и не отправляются на наши серверы.</p>
+    <button type="button" class="btn btn--primary" data-close-modal>Закрыть</button>
+  </dialog>
+  <dialog id="modal-contacts" class="modal">
+    <h3>Контакты</h3>
+    <p>По вопросам раннего доступа: hello@petlife.app</p>
+    <p>Для партнёрства с приютами: shelters@petlife.app</p>
+    <button type="button" class="btn btn--primary" data-close-modal>Закрыть</button>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
